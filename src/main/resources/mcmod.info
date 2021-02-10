@@ -1,0 +1,19 @@
+[
+  {
+    "modid": "galacticraft-biology",
+    "name": "Galacticraft Biology",
+    "description": "First Starshine Addon which intends to extend cros, forestry mechanic on gaalcticraft panets",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "skyline",
+      "K1R1EIIIKA"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
