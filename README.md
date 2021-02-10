@@ -1,0 +1,3 @@
+# Galacticraft Biology
+
+Addon
