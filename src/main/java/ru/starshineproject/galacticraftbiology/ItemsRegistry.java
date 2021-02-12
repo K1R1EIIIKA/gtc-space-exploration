@@ -33,10 +33,6 @@ public class ItemsRegistry {
 
     @SubscribeEvent
     public static void onRegistryItem(RegistryEvent.Register<Item> e) {
-
-        //Пример на добавление айтема
-        //e.getRegistry().register(new ItemBase("id предмета"));
-
         e.getRegistry().register(new ItemBase("moon_honey_drop"));
         e.getRegistry().register(new ItemBase("moon_bee_comb"));
     }
