@@ -15,7 +15,7 @@ apply plugin: "net.minecraftforge.gradle.forge"
 
 group = 'ru.starshine-project'
 version = '1.0-SNAPSHOT'
-archivesBaseName = 'galacticraft-biology'
+archivesBaseName = 'galacticraftbiology'
 
 minecraft {
     version = project.forgeVersion

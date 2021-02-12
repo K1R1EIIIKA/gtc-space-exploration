@@ -1,6 +1,6 @@
 [
   {
-    "modid": "galacticraft-biology",
+    "modid": "galacticraftbiology",
     "name": "Galacticraft Biology",
     "description": "First Starshine Addon which intends to extend crops, forestry mechanic on galacticraft planets",
     "version": "${version}",

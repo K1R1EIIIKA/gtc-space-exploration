@@ -25,24 +25,25 @@ public class ItemsRegistry {
     @SideOnly(Side.CLIENT)
     private static void registryModel(Item item) {
         final ResourceLocation regName = item.getRegistryName();
+        if (regName == null) {
+            GalacticraftBiology.logger.error("Null key received during model registration: {}\n. Please report", item.toString());
+            return;
+        }
         final ModelResourceLocation mrl = new ModelResourceLocation(regName, "inventory");
         ModelBakery.registerItemVariants(item, mrl);
         ModelLoader.setCustomModelResourceLocation(item, 0, mrl);
-
     }
-
 
     @SubscribeEvent
     public static void onRegistryItem(RegistryEvent.Register<Item> e) {
-        e.getRegistry().register(new ItemMoonHoneyDrop());
-
+        e.getRegistry().register(new ItemMoonHoneyDrop("moon_honey_drop"));
     }
 
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void onRegistryModel(ModelRegistryEvent e) {
-
-        registryModel(MOON_HONEY_DROP);
-
+        GalacticraftBiology.ITEMS.forEach((key, item) -> {
+            registryModel(item);
+        });
     }
 }
