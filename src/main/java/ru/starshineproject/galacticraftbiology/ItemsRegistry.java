@@ -13,14 +13,11 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import ru.starshineproject.galacticraftbiology.item.ItemMoonHoneyDrop;
+import ru.starshineproject.galacticraftbiology.item.ItemBase;
 
 @GameRegistry.ObjectHolder("galacricraftbiology")
 @Mod.EventBusSubscriber
 public class ItemsRegistry {
-
-    @GameRegistry.ObjectHolder("moon_honey_drop")
-    public static final Item MOON_HONEY_DROP = null;
 
     @SideOnly(Side.CLIENT)
     private static void registryModel(Item item) {
@@ -36,14 +33,17 @@ public class ItemsRegistry {
 
     @SubscribeEvent
     public static void onRegistryItem(RegistryEvent.Register<Item> e) {
-        e.getRegistry().register(new ItemMoonHoneyDrop("moon_honey_drop"));
+
+        //Пример на добавление айтема
+        //e.getRegistry().register(new ItemBase("id предмета"));
+
+        e.getRegistry().register(new ItemBase("moon_honey_drop"));
+        e.getRegistry().register(new ItemBase("moon_bee_comb"));
     }
 
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void onRegistryModel(ModelRegistryEvent e) {
-        GalacticraftBiology.ITEMS.forEach((key, item) -> {
-            registryModel(item);
-        });
+        GalacticraftBiology.ITEMS.forEach((key, item) -> registryModel(item));
     }
 }
