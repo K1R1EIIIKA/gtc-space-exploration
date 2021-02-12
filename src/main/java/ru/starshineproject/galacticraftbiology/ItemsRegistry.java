@@ -28,19 +28,21 @@ public class ItemsRegistry {
         final ModelResourceLocation mrl = new ModelResourceLocation(regName, "inventory");
         ModelBakery.registerItemVariants(item, mrl);
         ModelLoader.setCustomModelResourceLocation(item, 0, mrl);
-        registryModel(MOON_HONEY_DROP);
+
     }
 
 
     @SubscribeEvent
     public static void onRegistryItem(RegistryEvent.Register<Item> e) {
         e.getRegistry().register(new ItemMoonHoneyDrop());
+
     }
 
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void onRegistryModel(ModelRegistryEvent e) {
 
+        registryModel(MOON_HONEY_DROP);
 
     }
 }
