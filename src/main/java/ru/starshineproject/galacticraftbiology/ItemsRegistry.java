@@ -19,6 +19,9 @@ import ru.starshineproject.galacticraftbiology.item.ItemMoonHoneyDrop;
 @Mod.EventBusSubscriber
 public class ItemsRegistry {
 
+    @GameRegistry.ObjectHolder("moon_honey_drop")
+    public static final Item MOON_HONEY_DROP = null;
+
     @SideOnly(Side.CLIENT)
     private static void registryModel(Item item) {
         final ResourceLocation regName = item.getRegistryName();
@@ -28,8 +31,6 @@ public class ItemsRegistry {
         registryModel(MOON_HONEY_DROP);
     }
 
-    @GameRegistry.ObjectHolder("key")
-    public static final Item MOON_HONEY_DROP = null;
 
     @SubscribeEvent
     public static void onRegistryItem(RegistryEvent.Register<Item> e) {
