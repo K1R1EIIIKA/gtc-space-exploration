@@ -13,7 +13,15 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.registries.IForgeRegistry;
+import ru.starshineproject.galacticraftbiology.api.ItemsGB;
 import ru.starshineproject.galacticraftbiology.item.ItemBase;
+import ru.starshineproject.galacticraftbiology.item.MoonBeeComb;
+import ru.starshineproject.galacticraftbiology.item.MoonHoneyDrop;
+import ru.starshineproject.galacticraftbiology.item.PlateSolar;
+
+import java.lang.reflect.Field;
 
 @GameRegistry.ObjectHolder("galacricraftbiology")
 @Mod.EventBusSubscriber
@@ -29,6 +37,13 @@ public class ItemsRegistry {
         final ModelResourceLocation mrl = new ModelResourceLocation(regName, "inventory");
         ModelBakery.registerItemVariants(item, mrl);
         ModelLoader.setCustomModelResourceLocation(item, 0, mrl);
+    }
+
+    @SubscribeEvent
+    public static void initItems(IForgeRegistry e) {
+        e.register(ItemsGB.moon_bee_comb = new MoonBeeComb());
+        e.register(ItemsGB.moon_honey_drop = new MoonHoneyDrop());
+        e.register(ItemsGB.plate_solar = new PlateSolar());
     }
 
     @SubscribeEvent
