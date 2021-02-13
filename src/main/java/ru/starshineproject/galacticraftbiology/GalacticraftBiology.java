@@ -19,7 +19,8 @@ import java.util.HashMap;
 @Mod(
         modid = GalacticraftBiology.MODID,
         name = GalacticraftBiology.MODNAME,
-        version = GalacticraftBiology.VERSION
+        version = GalacticraftBiology.VERSION,
+        dependencies = "required-after:ic2-classic-spmod;required-after:gtclassic@[1.1.6,);"
 )
 public class GalacticraftBiology {
 

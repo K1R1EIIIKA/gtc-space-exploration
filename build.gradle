@@ -30,18 +30,19 @@ repositories {
 }
 
 dependencies {
-    //jei
-    implementation "curse.maven:jei-238222:$project.jeiVersion"
+    //jei, ic2 classic
+    compile "curse.maven:jei-238222:$project.jeiVersion"
+    compile "curse.maven:ic2classic-242942:$project.icClassicVersion"
 
     //forestry, gt classic, gtc expansion
-    implementation "curse.maven:forestry-59751:$project.forestryVersion"
-    implementation "curse.maven:gtclassic-324021:$project.gtcVersion"
-    implementation "curse.maven:gtсexpansion-349126:$project.gtcExVersion"
+    compile "curse.maven:forestry-59751:$project.forestryVersion"
+    compile "curse.maven:gtclassic-324021:$project.gtcVersion"
+    compile "curse.maven:gtсexpansion-349126:$project.gtcExVersion"
 
     //Galacticraft
-    //implementation files('libs/Galacticraft-Planets-Dev-1.12.2-4.0.2.261.jar')
-    //implementation files('libs/GalacticraftCore-Dev-1.12.2-4.0.2.261.jar')
-    //implementation files('libs/MicdoodleCore-Dev-1.12.2-4.0.2.261.jar')
+    //compile files('libs/Galacticraft-Planets-Dev-1.12.2-4.0.2.261.jar')
+    //compile files('libs/GalacticraftCore-Dev-1.12.2-4.0.2.261.jar')
+    //compile files('libs/MicdoodleCore-Dev-1.12.2-4.0.2.261.jar')
 }
 
 processResources {
