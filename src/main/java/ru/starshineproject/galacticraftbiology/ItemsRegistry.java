@@ -40,6 +40,7 @@ public class ItemsRegistry {
         e.getRegistry().register(new ItemBase("moon_honey_drop"));
         e.getRegistry().register(new ItemBase("moon_bee_comb"));
         e.getRegistry().register(new ItemBase("ingot_vanadium"));
+        e.getRegistry().register(new ItemBase("plate_solar"));
     }
 
     @SubscribeEvent
