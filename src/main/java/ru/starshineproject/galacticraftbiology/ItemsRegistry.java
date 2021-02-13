@@ -35,6 +35,7 @@ public class ItemsRegistry {
     public static void onRegistryItem(RegistryEvent.Register<Item> e) {
         e.getRegistry().register(new ItemBase("moon_honey_drop"));
         e.getRegistry().register(new ItemBase("moon_bee_comb"));
+        e.getRegistry().register(new ItemBase("ingot_vanadium"));
     }
 
     @SubscribeEvent
