@@ -7,22 +7,20 @@ import ru.starshineproject.galacticraftbiology.GalacticraftBiology;
 
 public class BlockMoonHive extends Block {
 
-public BlockMoonHive(String id) {
+    public BlockMoonHive(String id) {
 
-    super(Material.ROCK);
-    this.setTranslationKey("galacticraftbiology.moon_hive");
-    this.setRegistryName(GalacticraftBiology.MODID, "moon_hive");
-}
-
-@Override
-public boolean isOpaqueCube(IBlockState state)
-{
-    return false;
-}
+        super(Material.ROCK);
+        this.setTranslationKey("galacticraftbiology.moon_hive");
+        this.setRegistryName(GalacticraftBiology.MODID, "moon_hive");
+    }
 
     @Override
-    public boolean isFullCube(IBlockState state)
-    {
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public boolean isFullCube(IBlockState state) {
         return false;
     }
 }

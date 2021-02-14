@@ -14,12 +14,13 @@ buildscript {
 apply plugin: "net.minecraftforge.gradle.forge"
 
 group = 'ru.starshine-project'
-version = project.modVersion
+version = '1.0-SNAPSHOT'
 archivesBaseName = 'galacticraftbiology'
 
 minecraft {
     version = project.forgeVersion
     runDir = "run"
+
     mappings = project.mcpVersion
 }
 
@@ -30,31 +31,24 @@ repositories {
 }
 
 dependencies {
-    //jei, ic2 classic
-    compile "curse.maven:jei-238222:$project.jeiVersion"
-    compile "curse.maven:ic2classic-242942:$project.icClassicVersion"
-
-    //forestry, gt classic, gtc expansion
-    compile "curse.maven:forestry-59751:$project.forestryVersion"
-    compile "curse.maven:gtclassic-324021:$project.gtcVersion"
-    compile "curse.maven:gtсexpansion-349126:$project.gtcExVersion"
-
-    //Galacticraft
-    //compile files('libs/Galacticraft-Planets-Dev-1.12.2-4.0.2.261.jar')
-    //compile files('libs/GalacticraftCore-Dev-1.12.2-4.0.2.261.jar')
-    //compile files('libs/MicdoodleCore-Dev-1.12.2-4.0.2.261.jar')
+    compile "curse.maven:jei-238222:3040523"
+    compile "curse.maven:forestry-59751:2684780"
 }
 
 processResources {
+    // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
 
+    // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include "mcmod.info"
 
+        // replace version and mcversion
         expand "version": project.version, "mcversion": project.minecraft.version
     }
 
+    // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude "mcmod.info"
     }

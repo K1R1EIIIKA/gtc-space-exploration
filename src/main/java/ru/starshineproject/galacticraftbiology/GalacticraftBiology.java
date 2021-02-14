@@ -1,7 +1,9 @@
 package ru.starshineproject.galacticraftbiology;
 
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -15,6 +17,8 @@ import org.apache.logging.log4j.Logger;
 import ru.starshineproject.galacticraftbiology.proxy.CommonProxy;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 @Mod(
         modid = GalacticraftBiology.MODID,
