@@ -8,6 +8,8 @@ public class ItemBase extends Item {
     public ItemBase(String id) {
         this.setRegistryName(GalacticraftBiology.MODID, id);
         this.setTranslationKey(GalacticraftBiology.MODID + "." + id);
-        GalacticraftBiology.ITEMS.put(id, this);
+        this.setCreativeTab(GalacticraftBiology.tabGBMain);
+
+        GalacticraftBiology.ITEMS.add(this);
     }
 }

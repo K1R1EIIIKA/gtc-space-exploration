@@ -14,6 +14,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import ru.starshineproject.galacticraftbiology.api.ItemsGB;
+import ru.starshineproject.galacticraftbiology.oredict.OreDictAdd;
 import ru.starshineproject.galacticraftbiology.proxy.CommonProxy;
 
 import java.util.HashMap;
@@ -23,8 +25,8 @@ import java.util.ArrayList;
 @Mod(
         modid = GalacticraftBiology.MODID,
         name = GalacticraftBiology.MODNAME,
-        version = GalacticraftBiology.VERSION,
-        dependencies = "required-after:ic2-classic-spmod;required-after:gtclassic@[1.1.6,);"
+        version = GalacticraftBiology.VERSION
+
 )
 public class GalacticraftBiology {
 
@@ -34,7 +36,8 @@ public class GalacticraftBiology {
 
     public static final Logger logger = LogManager.getLogger(MODID.toUpperCase());
 
-    public static final HashMap<String, Item> ITEMS = new HashMap<>();
+    public static final List<Item> ITEMS = new ArrayList();
+    public static final List<Block> BLOCKS = new ArrayList();
 
     @SidedProxy(clientSide = "ru.starshineproject.galacticraftbiology.proxy.ClientProxy", serverSide = "ru.starshineproject.galacticraftbiology.proxy.CommonProxy")
     public static CommonProxy proxy;
@@ -49,10 +52,18 @@ public class GalacticraftBiology {
      * This is the first initialization event. Register tile entities here.
      * The registry events below will have fired prior to entry to this method.
      */
+    public static CreativeTabs tabGBMain = new CreativeTabs(MODNAME) {
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(ItemsGB.moon_bee_comb);
+        }
+    };
+
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
 
         proxy.preInit(event);
+        BlocksRegistry.initBlock();
 
     }
 
@@ -63,6 +74,7 @@ public class GalacticraftBiology {
     public void init(FMLInitializationEvent event) {
 
         proxy.init(event);
+        new OreDictAdd().initOreDict();
 
     }
 
@@ -73,6 +85,8 @@ public class GalacticraftBiology {
     public void postinit(FMLPostInitializationEvent event) {
 
         proxy.postInit(event);
+        ITEMS.clear();
+        BLOCKS.clear();
 
     }
 

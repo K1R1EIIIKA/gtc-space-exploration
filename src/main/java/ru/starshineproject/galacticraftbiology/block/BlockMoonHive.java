@@ -5,13 +5,10 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import ru.starshineproject.galacticraftbiology.GalacticraftBiology;
 
-public class BlockMoonHive extends Block {
+public class BlockMoonHive extends BlockBase {
 
-    public BlockMoonHive(String id) {
-
-        super(Material.ROCK);
-        this.setTranslationKey("galacticraftbiology.moon_hive");
-        this.setRegistryName(GalacticraftBiology.MODID, "moon_hive");
+    public BlockMoonHive() {
+        super("moon_hive", Material.IRON);
     }
 
     @Override

@@ -31,8 +31,9 @@ repositories {
 }
 
 dependencies {
-    compile "curse.maven:jei-238222:3040523"
-    compile "curse.maven:forestry-59751:2684780"
+    compile "curse.maven:jei-$project.jeiId:$project.jeiVersion"
+    compile "curse.maven:forestry-$project.forestryId:$project.forestryVersion"
+    compile "curse.maven:craftweaker-239197:3040575"
 }
 
 processResources {

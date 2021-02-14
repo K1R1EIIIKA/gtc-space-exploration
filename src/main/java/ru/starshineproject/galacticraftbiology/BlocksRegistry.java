@@ -5,6 +5,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -16,17 +18,17 @@ import ru.starshineproject.galacticraftbiology.item.MoonBeeComb;
 import ru.starshineproject.galacticraftbiology.item.MoonHoneyDrop;
 import ru.starshineproject.galacticraftbiology.item.PlateSolar;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 public class BlocksRegistry {
 
-    public static Block MOON_HIVE = new BlockMoonHive("moon_hive");
+    public static void initBlock(){
+        BlocksGB.moon_hive = new BlockMoonHive();
 
-    public static void register() {
-        setRegister(MOON_HIVE);
-    }
-
-    @SideOnly(Side.CLIENT)
-    public static void registerRender() {
-        setRender(MOON_HIVE);
+        GalacticraftBiology.BLOCKS.forEach((block)->{
+            setRegister(block);
+        });
     }
 
     private static void setRegister(Block block) {
@@ -35,12 +37,9 @@ public class BlocksRegistry {
     }
 
     @SideOnly(Side.CLIENT)
-    private static void setRender(Block block) {
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
-    }
-
-    public static void initBlocks(IForgeRegistry e) {
-        e.register(BlocksGB.moon_hive = new BlockMoonHive());
-
+    public static void setRender() {
+        GalacticraftBiology.BLOCKS.forEach((block)->{
+            Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+        });
     }
 }
