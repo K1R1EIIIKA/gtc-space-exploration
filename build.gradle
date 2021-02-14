@@ -32,8 +32,12 @@ repositories {
 
 dependencies {
     compile "curse.maven:jei-$project.jeiId:$project.jeiVersion"
+    compile "curse.maven:craftweaker2-$project.ctId:$project.ctVersion"
+
     compile "curse.maven:forestry-$project.forestryId:$project.forestryVersion"
-    compile "curse.maven:craftweaker-239197:3040575"
+    compile "curse.maven:ic2classic-$project.icClassicId:$project.icClassicVersion"
+    compile "curse.maven:gtclassic-$project.gtcId:$project.gtcVersion"
+    compile "curse.maven:gtcexpansion-$project.gtcExId:$project.gtcExVersion"
 }
 
 processResources {
