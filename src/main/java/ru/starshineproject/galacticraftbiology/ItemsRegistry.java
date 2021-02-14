@@ -14,10 +14,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 import ru.starshineproject.galacticraftbiology.api.ItemsGB;
-import ru.starshineproject.galacticraftbiology.item.IngotVanadium;
-import ru.starshineproject.galacticraftbiology.item.MoonBeeComb;
-import ru.starshineproject.galacticraftbiology.item.MoonHoneyDrop;
-import ru.starshineproject.galacticraftbiology.item.PlateSolar;
+import ru.starshineproject.galacticraftbiology.item.*;
 
 @GameRegistry.ObjectHolder("galacricraftbiology")
 @Mod.EventBusSubscriber
@@ -41,6 +38,7 @@ public class ItemsRegistry {
         e.register(ItemsGB.moon_honey_drop = new MoonHoneyDrop());
         e.register(ItemsGB.plate_solar = new PlateSolar());
         e.register(ItemsGB.ingot_vanadium = new IngotVanadium());
+        e.register(ItemsGB.moon_honey_bread = new MoonHoneyBread());
     }
 
     @SubscribeEvent
