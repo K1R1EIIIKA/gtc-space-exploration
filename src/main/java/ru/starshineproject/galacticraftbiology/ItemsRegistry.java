@@ -12,14 +12,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
 import net.minecraftforge.registries.IForgeRegistry;
 import ru.starshineproject.galacticraftbiology.api.ItemsGB;
+import ru.starshineproject.galacticraftbiology.item.IngotVanadium;
 import ru.starshineproject.galacticraftbiology.item.MoonBeeComb;
 import ru.starshineproject.galacticraftbiology.item.MoonHoneyDrop;
 import ru.starshineproject.galacticraftbiology.item.PlateSolar;
-
-import java.lang.reflect.Field;
 
 @GameRegistry.ObjectHolder("galacricraftbiology")
 @Mod.EventBusSubscriber
@@ -42,6 +40,7 @@ public class ItemsRegistry {
         e.register(ItemsGB.moon_bee_comb = new MoonBeeComb());
         e.register(ItemsGB.moon_honey_drop = new MoonHoneyDrop());
         e.register(ItemsGB.plate_solar = new PlateSolar());
+        e.register(ItemsGB.ingot_vanadium = new IngotVanadium());
     }
 
     @SubscribeEvent

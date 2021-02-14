@@ -1,7 +1,5 @@
 package ru.starshineproject.galacticraftbiology.oredict;
 
-import forestry.apiculture.items.EnumHoneyComb;
-import forestry.apiculture.items.ItemHoneyComb;
 import net.minecraftforge.oredict.OreDictionary;
 import ru.starshineproject.galacticraftbiology.api.ItemsGB;
 
