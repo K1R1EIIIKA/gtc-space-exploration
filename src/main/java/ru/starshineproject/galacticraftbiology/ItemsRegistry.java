@@ -38,7 +38,9 @@ public class ItemsRegistry {
         e.register(ItemsGB.moon_honey_drop = new MoonHoneyDrop());
         e.register(ItemsGB.plate_solar = new PlateSolar());
         e.register(ItemsGB.ingot_vanadium = new IngotVanadium());
+
         e.register(ItemsGB.moon_honey_bread = new MoonHoneyBread());
+        e.register(ItemsGB.moon_wart = new MoonWart());
     }
 
     @SubscribeEvent
