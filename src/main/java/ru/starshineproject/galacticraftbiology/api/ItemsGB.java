@@ -9,8 +9,9 @@ public class ItemsGB {
     public static Item moon_honey_drop;
     public static Item plate_solar;
     public static Item ingot_vanadium;
+    public static Item moon_wart;
 
     public static ItemFood moon_honey_bread;
-    public static ItemFood moon_wart;
+    public static ItemFood moon_wart_stew;
 
 }
