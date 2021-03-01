@@ -1,8 +1,10 @@
 package ru.starshineproject.galacticraftbiology.block;
 
 import forestry.api.apiculture.IHiveTile;
+import forestry.api.apiculture.hives.IHiveRegistry;
 import forestry.apiculture.MaterialBeehive;
 import forestry.core.tiles.TileUtil;
+import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
@@ -11,6 +13,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockMoonHive extends BlockBase {
+
+    private static final PropertyEnum<IHiveRegistry.HiveType> HIVE_TYPES = PropertyEnum.create("hive", IHiveRegistry.HiveType.class);
 
     public BlockMoonHive() {
         super("moon_hive", new MaterialBeehive(true), 0.7F, 2.5F, "scoop", 0);
@@ -52,4 +56,5 @@ public class BlockMoonHive extends BlockBase {
     public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
         return 5;
     }
+
 }
