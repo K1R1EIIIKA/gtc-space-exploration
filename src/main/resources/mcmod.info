@@ -1,7 +1,7 @@
 [
   {
-    "modid": "galacticraftbiology",
-    "name": "Galacticraft Biology",
+    "modid": "gtcspaceexploration",
+    "name": "GTC Space Exploration",
     "description": "First Starshine Addon which intends to extend crops, forestry mechanic on galacticraft planets",
     "version": "${version}",
     "mcversion": "${mcversion}",

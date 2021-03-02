@@ -1,3 +1,3 @@
-# Galacticraft Biology
+# GTC Space Exploration
 
-Addon
+Amazing Brand New addon by K1R1EIIIKA, skyline, S1dechko, PhoenixXL
