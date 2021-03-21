@@ -9,12 +9,16 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import ru.starshineproject.gtcspaceexploration.api.BlocksGB;
+import ru.starshineproject.gtcspaceexploration.block.BlockAlienColdFusionGenerator;
 
 import java.util.Objects;
 
 public class BlocksRegistry {
 
     public static void initBlock(){
+
+        BlocksGB.alien_cold_fusion_generator = new BlockAlienColdFusionGenerator();
 
         GTCSpaceExploration.BLOCKS.forEach(BlocksRegistry::setRegister);
     }

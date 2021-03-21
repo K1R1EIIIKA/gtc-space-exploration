@@ -6,7 +6,7 @@ import ru.starshineproject.gtcspaceexploration.GTCSpaceExploration;
 
 public class BlockBase extends Block {
 
-    public BlockBase(String id, Material material, float light, float hardness, String instrument, int level){
+    public BlockBase(String id, Material material, float light, float hardness){
         super(material);
 
         this.setRegistryName(GTCSpaceExploration.MODID, id);
@@ -14,7 +14,7 @@ public class BlockBase extends Block {
         this.setCreativeTab(GTCSpaceExploration.tabGBMain);
         this.setLightLevel(light);
         this.setHardness(hardness);
-        this.setHarvestLevel(instrument, level);
+//        this.setHarvestLevel(instrument, level);
 
         GTCSpaceExploration.BLOCKS.add(this);
     }
